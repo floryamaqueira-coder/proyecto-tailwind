@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneos activos | SPL</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols Outlined -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
+
+    <link rel="stylesheet" href="../../dist/css/main.css">
+
+    <!-- Íconos (ion-icon) -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  </head>
+  <body class="bg-[#1B1B1B]">
+
+    <!-- Menú (fuera de la sección, fijo arriba) -->
+  <header class="fixed top-0 left-0 w-full z-50">
+    <!-- Menú de PC -->
+    <nav id="nav-pc" class="hidden lg:block w-full h-16 bg-gradient-to-b from-black/50 to-transparent transition-all duration-300">
+      <ul class="flex gap-5 justify-center text-md text-white items-center pt-3">
+        <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="index.html">Inicio</a></li>
+        <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="creaciontorneo.html">Crea</a></li>
+        <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="iniciosesion.html">Únete</a></li>
+        <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="torneosactivos.html">Descubre</a></li>
+        <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="">Soporte</a></li>
+      </ul>
+    </nav>
+
+    <!-- Botón abrir menú móvil -->
+    <button id="btn-abrir" class="lg:hidden absolute top-6 right-6 z-20 text-white bg-black/50 rounded-full p-1">
+      <span class="material-symbols-outlined text-[40px]">menu</span>
+    </button>
+
+    <!-- Fondo oscuro aside -->
+    <div id="fondo-menu" class="lg:hidden fixed top-0 left-0 w-full h-full bg-black/60 z-30 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+    <!-- Aside derecho -->
+    <aside id="menu-movil" class="lg:hidden fixed top-0 right-0 h-full w-72 bg-black z-40 text-white translate-x-full transition-transform duration-300 ease-in-out p-8 flex flex-col gap-6">
+
+      <!-- Botón cerrar -->
+      <button id="btn-cerrar" class="self-end hover:rotate-90 transition-transform duration-300">
+        <span class="material-symbols-outlined text-4xl">close</span>
+      </button>
+
+      <a href="index.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Inicio</a>
+      <a href="creaciontorneo.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Crea</a>
+      <a href="iniciosesion.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Únete</a>
+      <a href="torneosactivos.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Descubre</a>
+      <a href="#" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Soporte</a>
+    </aside>
+  </header>
+    <!-- Márgenes -->
+    <div class="container mx-auto px-4 xl:max-w-[1100px] 2xl:max-w-[1350px]">
+
+      <main class="mt-10 mb-10">
+
+  <header class="text-center mb-8">
+    <h1 class="text-[#CC8710] font-bold uppercase text-2xl sm:text-3xl lg:text-[35px] tracking-[2px] sm:tracking-[4px] lg:tracking-[6px]"
+        style="font-family: 'Oswald', sans-serif;">Torneos activos</h1>
+    <p class="text-gray-300 font-light mt-2">Encuentra torneos según tus deportes de interés</p>
+    <hr class="hr-neon h-[2px] w-full mt-5 border-0">
+  </header>
+
+  <!-- ================= FILTROS ================= -->
+  <section class="borde-neon rounded-3xl p-5 border border-[#CC8710] text-white mb-8">
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-6">
+
+      <div class="relative">
+        <label for="select-criterio" class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Buscar en</label>
+        <select id="select-criterio"
+                class="w-full appearance-none bg-[#1B1B1B] border-b border-white/40 text-white py-2 pr-8 cursor-pointer focus:outline-none focus:border-[#CC8710] transition duration-300">
+          <option value="todo">Todo</option>
+          <option value="deporte">Deporte</option>
+          <option value="nombre">Nombre</option>
+        </select>
+        <ion-icon name="chevron-down-outline" class="absolute right-1 bottom-2 text-xl text-[#CC8710] pointer-events-none"></ion-icon>
+      </div>
+
+      <div class="relative">
+        <label for="input-busqueda" class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Búsqueda</label>
+        <input type="text" id="input-busqueda" placeholder="Ej: Handball, Rugby o un nombre"
+               class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 placeholder-gray-500 focus:outline-none focus:border-[#CC8710] transition duration-300">
+        <ion-icon name="search-outline" class="absolute right-1 bottom-2 text-xl text-[#CC8710] pointer-events-none"></ion-icon>
+      </div>
+
+      <div class="relative">
+        <label for="select-deporte" class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Deporte</label>
+        <select id="select-deporte"
+                class="w-full appearance-none bg-[#1B1B1B] border-b border-white/40 text-white py-2 pr-8 cursor-pointer focus:outline-none focus:border-[#CC8710] transition duration-300">
+          <option value="todos">Todos los deportes</option>
+          <option value="futbol">Fútbol</option>
+          <option value="futbol-sala">Fútbol sala</option>
+          <option value="basquet">Básquetbol</option>
+          <option value="padel">Pádel</option>
+          <option value="otro">Otro deporte...</option>
+        </select>
+        <ion-icon name="chevron-down-outline" class="absolute right-1 bottom-2 text-xl text-[#CC8710] pointer-events-none"></ion-icon>
+      </div>
+
+    </div>
+
+    <!-- Etiquetas de deportes -->
+    <div class="flex flex-wrap gap-2">
+      <button type="button" data-deporte="todos"
+              class="chip-deporte flex items-center gap-1 border rounded-full px-4 py-1 text-sm cursor-pointer transition-all duration-300 active:scale-95">Todos</button>
+      <button type="button" data-deporte="futbol"
+              class="chip-deporte flex items-center gap-1 border rounded-full px-4 py-1 text-sm cursor-pointer transition-all duration-300 active:scale-95">
+        <ion-icon name="football-outline"></ion-icon> Fútbol</button>
+      <button type="button" data-deporte="futbol-sala"
+              class="chip-deporte flex items-center gap-1 border rounded-full px-4 py-1 text-sm cursor-pointer transition-all duration-300 active:scale-95">
+        <ion-icon name="football-outline"></ion-icon> Fútbol sala</button>
+      <button type="button" data-deporte="basquet"
+              class="chip-deporte flex items-center gap-1 border rounded-full px-4 py-1 text-sm cursor-pointer transition-all duration-300 active:scale-95">
+        <ion-icon name="basketball-outline"></ion-icon> Básquetbol</button>
+      <button type="button" data-deporte="padel"
+              class="chip-deporte flex items-center gap-1 border rounded-full px-4 py-1 text-sm cursor-pointer transition-all duration-300 active:scale-95">
+        <ion-icon name="tennisball-outline"></ion-icon> Pádel</button>
+      <button type="button" data-deporte="otro"
+              class="chip-deporte flex items-center gap-1 border rounded-full px-4 py-1 text-sm cursor-pointer transition-all duration-300 active:scale-95">
+        <ion-icon name="create-outline"></ion-icon> Escribir otro...</button>
+    </div>
+
+  </section>
+
+  <!-- ================= RESULTADOS (las tarjetas las genera el JS) ================= -->
+  <section id="grilla-torneos" class="grid grid-cols-1 md:grid-cols-2 gap-5"></section>
+
+  <div id="sin-resultados-torneos" class="hidden text-center text-gray-300 border border-white/20 rounded-3xl p-8">
+    No se encontraron torneos activos para tu búsqueda.
+  </div>
+
+</main>
+
+    </div>
+
+    <footer class="w-full bg-[#1B1B1B] py-8">
+      <div class="container mx-auto px-6 xl:max-w-[1100px] 2xl:max-w-[1350px]">
+        <hr class="hr-neon h-[2px] w-full mb-6 border-0">
+        <p class="text-center text-[#656565] text-[12px]">© 2026 SPL | Sistema de Gestión de Torneos y Partidos</p>
+      </div>
+    </footer>
+
+    <script src="../../src/js/main.js" defer></script>
+  </body>
+</html>

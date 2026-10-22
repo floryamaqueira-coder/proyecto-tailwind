@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols Outlined -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
+
+    <link rel="stylesheet" href="../../dist/css/main.css">
+
+    <!-- Íconos (ion-icon) -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  </head>
+  <body class="bg-[#1B1B1B]">
+
+   <!-- Menú (fuera de la sección, fijo arriba) -->
+  <header class="fixed top-0 left-0 w-full z-50">
+    <!-- Menú de PC -->
+    <nav id="nav-pc" class="hidden lg:block w-full h-16 bg-gradient-to-b from-black/50 to-transparent transition-all duration-300">
+      <ul class="flex gap-5 justify-center text-md text-white items-center pt-3">
+        <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="index.html">Inicio</a></li>
+        <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="creaciontorneo.html">Crea</a></li>
+        <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="iniciosesion.html">Únete</a></li>
+        <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="torneosactivos.html">Descubre</a></li>
+        <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="">Soporte</a></li>
+      </ul>
+    </nav>
+
+    <!-- Botón abrir menú móvil -->
+    <button id="btn-abrir" class="lg:hidden absolute top-6 right-6 z-20 text-white bg-black/50 rounded-full p-1">
+      <span class="material-symbols-outlined text-[40px]">menu</span>
+    </button>
+
+    <!-- Fondo oscuro aside -->
+    <div id="fondo-menu" class="lg:hidden fixed top-0 left-0 w-full h-full bg-black/60 z-30 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+    <!-- Aside derecho -->
+    <aside id="menu-movil" class="lg:hidden fixed top-0 right-0 h-full w-72 bg-black z-40 text-white translate-x-full transition-transform duration-300 ease-in-out p-8 flex flex-col gap-6">
+
+      <!-- Botón cerrar -->
+      <button id="btn-cerrar" class="self-end hover:rotate-90 transition-transform duration-300">
+        <span class="material-symbols-outlined text-4xl">close</span>
+      </button>
+
+      <a href="index.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Inicio</a>
+      <a href="creaciontorneo.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Crea</a>
+      <a href="iniciosesion.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Únete</a>
+      <a href="torneosactivos.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Descubre</a>
+      <a href="#" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Soporte</a>
+    </aside>
+  </header>
+
+    <!-- Márgenes -->
+    <div class="container mx-auto px-4 xl:max-w-[1100px] 2xl:max-w-[1350px]">
+
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10 mb-10">
+
+        <!-- PERFIL -->
+        <div class="borde-neon flex flex-col items-center text-center rounded-3xl min-h-[40vh] p-5 border border-[#CC8710] text-white">
+
+          <h2 class="text-[#CC8710] font-bold uppercase text-2xl tracking-[2px] sm:tracking-[4px]"
+              style="font-family: 'Oswald', sans-serif;">Mi perfil</h2>
+          <hr class="hr-neon h-[2px] w-full my-4 border-0">
+
+          <!-- Avatar -->
+          <div class="w-24 h-24 rounded-full border border-[#CC8710] flex items-center justify-center mt-2">
+            <ion-icon name="person-outline" class="text-5xl text-[#CC8710]"></ion-icon>
+          </div>
+
+          <h3 id="perfil-nombre" class="text-xl font-semibold mt-4">Usuario</h3>
+          <p id="perfil-email" class="text-sm text-gray-300 mb-6">correo@ejemplo.com</p>
+
+          <div class="flex flex-col gap-3 w-full max-w-[250px] mt-auto">
+            <a href="perfil.html"
+               class="w-full text-center text-white uppercase text-sm tracking-widest border border-[#CC8710] px-6 py-3 transition-all duration-300 hover:bg-[#CC8710] active:scale-95">
+              Ver mi perfil
+            </a>
+            <button id="btn-cerrar-sesion" type="button"
+                    class="text-sm text-gray-300 transition duration-300 hover:text-[#CC8710] cursor-pointer">
+              Cerrar sesión
+            </button>
+          </div>
+        </div>
+
+        <!-- BUSCADOR + TORNEOS ACTIVOS -->
+        <div class="borde-neon flex flex-col rounded-3xl min-h-[40vh] p-5 border border-[#CC8710] text-white">
+
+          <h2 class="text-[#CC8710] font-bold uppercase text-2xl tracking-[2px] sm:tracking-[4px] text-center"
+              style="font-family: 'Oswald', sans-serif;">Torneos activos</h2>
+          <hr class="hr-neon h-[2px] w-full my-4 border-0">
+
+          <!-- Buscador -->
+          <div class="relative mb-4">
+            <input type="text" id="buscador-torneos" placeholder="Busca por nombre o deporte"
+                   class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 placeholder-gray-500 focus:outline-none focus:border-[#CC8710] transition duration-300">
+            <ion-icon name="search-outline" class="absolute right-1 bottom-2 text-xl text-[#CC8710]"></ion-icon>
+          </div>
+
+          <!-- Galería (la genera el JS) -->
+          <div id="galeria-torneos" class="flex flex-col gap-3"></div>
+
+          <p id="sin-resultados" class="hidden text-sm text-gray-300 text-center mt-4">No se encontraron torneos</p>
+        </div>
+
+        <!-- CREAR TORNEO -->
+        <div class="borde-neon flex flex-col items-center text-center rounded-3xl min-h-[40vh] p-5 border border-[#CC8710] text-white">
+
+          <h2 class="text-[#CC8710] font-bold uppercase text-2xl tracking-[2px] sm:tracking-[4px]"
+              style="font-family: 'Oswald', sans-serif;">Crea un torneo</h2>
+          <hr class="hr-neon h-[2px] w-full my-4 border-0">
+
+          <ion-icon name="add-circle-outline" class="text-7xl text-[#CC8710] mt-2"></ion-icon>
+
+          <p class="text-gray-300 font-light leading-7 mt-4 max-w-[350px]">
+            Configura el nombre, la disciplina, las fechas y los participantes de tu competencia en pocos pasos.
+          </p>
+
+          <a href="crear-torneo.html"
+             class="w-full max-w-[250px] mt-auto text-center text-white uppercase text-sm tracking-widest border border-[#CC8710] px-6 py-3 transition-all duration-300 hover:bg-[#CC8710] active:scale-95">
+            Crear torneo
+          </a>
+        </div>
+
+        <!-- MIS TORNEOS -->
+        <div class="borde-neon flex flex-col rounded-3xl min-h-[40vh] p-5 border border-[#CC8710] text-white">
+
+          <h2 class="text-[#CC8710] font-bold uppercase text-2xl tracking-[2px] sm:tracking-[4px] text-center"
+              style="font-family: 'Oswald', sans-serif;">Mis torneos</h2>
+          <hr class="hr-neon h-[2px] w-full my-4 border-0">
+
+          <!-- Lista (la genera el JS) -->
+          <div id="lista-mis-torneos" class="flex flex-col gap-3"></div>
+
+          <p id="sin-mis-torneos" class="hidden text-sm text-gray-300 text-center mt-4">Aún no participas en ningún torneo</p>
+        </div>
+
+      </section>
+
+    </div>
+
+    <footer class="w-full bg-[#1B1B1B] py-12">
+      <div class="container mx-auto px-6 xl:max-w-[1100px] 2xl:max-w-[1350px]">
+
+        <!-- Logo y descripción -->
+        <div class="flex flex-col items-center">
+
+          <!-- línea - logo - línea -->
+          <div class="flex items-center w-full gap-4">
+            <hr class="hr-neon h-[2px] border-0 flex-1">
+            <img src="../../src/assets/SPL Sports League Logo.png" alt="Logo" class="w-60 md:w-80">
+            <hr class="hr-neon h-[2px] border-0 flex-1">
+          </div>
+
+          <p class="text-center text-white w-[100%] md:w-[50%]">
+            Tu espacio para <span class="text-[#CB8610] font-bold">competir, organizar y crecer</span>.
+            Conectamos deportistas, organizadores y
+            comunidades a través de una plataforma
+            diseñada para <span class="text-[#CB8610] font-bold">simplificar</span>
+            la gestión de torneos y <span class="text-[#CB8610] font-bold">fomentar</span> la competencia.
+          </p>
+        </div>
+
+        <!-- Columnas de links -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12 md:text-center">
+
+          <div>
+            <h2 class="text-[18px] font-bold text-white">Navegación</h2>
+            <ul>
+              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Inicio</a></li>
+              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Crea</a></li>
+              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Descubre</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="text-[18px] font-bold text-white">Ayuda y Soporte</h2>
+            <ul>
+              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Preguntas frecuentes</a></li>
+              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Centro de ayuda</a></li>
+              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Contacto</a></li>
+              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Reportar un problema</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="text-[18px] font-bold text-white">Planes</h2>
+            <ul>
+              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Plan gratuito</a></li>
+              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Plan Pro</a></li>
+              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Plan Premium</a></li>
+              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Comprar membresías</a></li>
+              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Gestionar membresía</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="text-[18px] font-bold text-white">Información legal</h2>
+            <ul>
+              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Términos y condiciones</a></li>
+              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Política de privacidad</a></li>
+              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Política de cookies</a></li>
+              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Política de cancelación</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex flex-col justify-center items-center mt-20">
+          <h2 class="text-[#656565] text-[12px] my-2">© 2026 SPL. Todos los derechos reservados.</h2>
+          <h2 class="text-[#656565] text-[12px]">Hecho para quienes viven la competencia.</h2>
+        </div>
+
+      </div>
+    </footer>
+
+    <script src="../../src/js/main.js" defer></script>
+  </body>
+</html>

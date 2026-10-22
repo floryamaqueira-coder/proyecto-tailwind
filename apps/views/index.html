@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols Outlined -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
+
+    <link rel="stylesheet" href="../../dist/css/main.css">
+  </head>
+  <body class="bg-[#1B1B1B]">
+
+  <!-- Menú (fuera de la sección, fijo arriba) -->
+  <header class="fixed top-0 left-0 w-full z-50">
+    <!-- Menú de PC -->
+    <nav id="nav-pc" class="hidden lg:block w-full h-16 bg-gradient-to-b from-black/50 to-transparent transition-all duration-300">
+      <ul class="flex gap-5 justify-center text-md text-white items-center pt-3">
+        <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="index.html">Inicio</a></li>
+        <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="creaciontorneo.html">Crea</a></li>
+        <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="iniciosesion.html">Únete</a></li>
+        <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="torneosactivos.html">Descubre</a></li>
+        <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="">Soporte</a></li>
+      </ul>
+    </nav>
+
+    <!-- Botón abrir menú móvil -->
+    <button id="btn-abrir" class="lg:hidden absolute top-6 right-6 z-20 text-white bg-black/50 rounded-full p-1">
+      <span class="material-symbols-outlined text-[40px]">menu</span>
+    </button>
+
+    <!-- Fondo oscuro aside -->
+    <div id="fondo-menu" class="lg:hidden fixed top-0 left-0 w-full h-full bg-black/60 z-30 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+    <!-- Aside derecho -->
+    <aside id="menu-movil" class="lg:hidden fixed top-0 right-0 h-full w-72 bg-black z-40 text-white translate-x-full transition-transform duration-300 ease-in-out p-8 flex flex-col gap-6">
+
+      <!-- Botón cerrar -->
+      <button id="btn-cerrar" class="self-end hover:rotate-90 transition-transform duration-300">
+        <span class="material-symbols-outlined text-4xl">close</span>
+      </button>
+
+      <a href="index.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Inicio</a>
+      <a href="creaciontorneo.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Crea</a>
+      <a href="iniciosesion.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Únete</a>
+      <a href="torneosactivos.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Descubre</a>
+      <a href="#" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Soporte</a>
+    </aside>
+  </header>
+
+  <section class="relative w-full h-screen overflow-hidden">
+    <!-- Imagen de fondo -->
+    <img src="../../src/assets/fondo.png" alt="img_hero" class="absolute md:w-full h-full object-cover lg:object-fill">
+    <!-- Transparencia negro -->
+    <div class="absolute w-full h-full bg-black/20"></div>
+
+    <!-- Logo arriba al centro -->
+    <div class="absolute w-full mt-2 md:mt-10 flex md:justify-center z-10 pointer-events-none">
+      <img src="../../src/assets/SPL Sports League Logo.png" alt="Logo" class="w-50">
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="absolute top-[35%] md:top-[40%] lg:top-auto py-0 lg:py-72 left-0 w-full flex flex-col items-center text-center px-4 z-10">
+      <!-- Descripción -->
+      <p class="text-white uppercase text-sm md:text-base lg:text-[20px] mt-0 lg:mt-8 mr-0 lg:mr-5 md:max-w-xl lg:max-w-[33%]"
+         style="font-family: 'Oswald', sans-serif;">
+        Llevá la competencia al siguiente nivel. Creá y gestioná torneos deportivos en un solo lugar,
+        organizá tus equipos y seguí cada resultado. Vos organizás el torneo, la pasión hace el resto.
+      </p>
+    </div>
+
+    <!-- Botones abajo -->
+    <div class="absolute bottom-50 lg:bottom-auto w-full flex flex-col lg:p-123 items-center z-10 gap-2">
+      <button href="#" class="w-[220px] text-white uppercase text-sm tracking-widest border border-white px-6 py-3 hover:bg-white hover:text-black">
+        Crea un torneo
+      </button>
+      <button href="#" class="w-[220px] text-white uppercase text-sm tracking-widest border border-white px-6 py-3 hover:bg-white hover:text-black">
+        Descubre torneos
+      </button>
+    </div>
+  </section>
+
+  <!-- Main a todo el ancho -->
+  <main class="w-full bg-[#1B1B1B]">
+
+    <!-- Div único con los márgenes -->
+    <div class="container mx-auto xl:max-w-[1100px] 2xl:max-w-[1350px]">
+
+      <!-- Presentación -->
+      <section class="flex w-full h-auto px-4 lg:px-0">
+        <div class="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-2">
+          <span class="flex flex-col mt-8 lg:mt-45 h-auto">
+            <h2 class="text-[#CC8710] font-bold uppercase text-2xl sm:text-3xl lg:text-[35px] tracking-[2px] sm:tracking-[4px] lg:tracking-[6px]" style="font-family: 'Oswald', sans-serif;">Organiza y compite</h2>
+            <hr class="hr-neon h-[2px] w-auto my-5 border-0">
+            <p class="text-white leading-7 font-light">Organiza, gestiona y vive el deporte como nunca antes. Lleva tus torneos deportivos al siguiente nivel con una plataforma
+              diseñada para hacer que cada competición sea más fácil, organizada y emocionante. <br> <br> Crea torneos, registra equipos y participantes,
+              organiza los enfrentamientos, consulta resultados y sigue cada etapa de la competición desde un solo lugar.
+              Ya sea que organices un torneo de fútbol, básquetbol, vóley o cualquier otra disciplina, tendrás las herramientas necesarias para gestionar cada detalle de forma sencilla, rápida y eficiente.
+              Olvídate del desorden y dedica tu tiempo a lo que realmente importa: la pasión por competir, el espíritu
+              de equipo y la emoción de cada partido. <br> <br> Crea tu torneo. Organiza la competición. Vive la pasión del deporte.</p>
+
+            <button class="mt-5 items-center border-1 border-[#CC8710] transition-all duration-300 p-2 text-white w-[150px] hover:bg-[#CC8710]" href="#">Crea tu torneo</button>
+          </span>
+          <img class="aspect-square w-full md:w-3/4 md:mx-auto lg:w-full h-auto" alt="volley" src="../../src/assets/volley.png" style="object-fit:contain;">
+        </div>
+      </section>
+
+      <!-- Torneos activos -->
+      <section class="w-full py-10 lg:py-16">
+        <h2 class="text-[#CC8710] font-bold uppercase text-2xl sm:text-3xl lg:text-[35px] tracking-[2px] sm:tracking-[4px] lg:tracking-[6px] px-4 mb-2" style="font-family: 'Oswald', sans-serif;">Torneos activos</h2>
+        <hr class="hr-neon h-[2px] w-auto my-5 border-0">
+
+        <div id="slider-torneos"
+             class="relative w-full h-[420px] sm:h-[460px] overflow-hidden select-none touch-pan-y focus-visible:outline-none"
+             role="region" aria-roledescription="carrusel" aria-label="Torneos activos">
+
+          <!-- Flecha anterior -->
+          <button id="slider-prev" aria-label="Torneo anterior"
+                  class="absolute top-1/2 -translate-y-1/2 left-0 lg:left-2 z-40 grid place-items-center text-white transition-all duration-300 hover:text-[#CC8710] hover:-translate-x-1 active:scale-90 focus-visible:text-[#CC8710] focus-visible:outline-none">
+            <span class="material-symbols-outlined" style="font-size: 80px;">keyboard_double_arrow_left</span>
+          </button>
+
+          <!-- Las tarjetas se generan desde JS -->
+          <div id="slider-track" class="relative w-full h-full"></div>
+
+          <!-- Flecha siguiente -->
+          <button id="slider-next" aria-label="Torneo siguiente"
+                  class="absolute top-1/2 -translate-y-1/2 right-0 lg:right-2 z-40 grid place-items-center text-white transition-all duration-300 hover:text-[#CC8710] hover:translate-x-1 active:scale-90 focus-visible:text-[#CC8710] focus-visible:outline-none">
+            <span class="material-symbols-outlined" style="font-size: 80px;">keyboard_double_arrow_right</span>
+          </button>
+
+          <!-- Puntos -->
+          <div id="slider-dots" class="absolute bottom-1 inset-x-0 z-40 flex justify-center gap-2"></div>
+        </div>
+      </section>
+
+    </div>
+    <!-- Fin del div con márgenes -->
+
+    <!-- Sección  -->
+    <section class="relative w-full h-screen overflow-hidden">
+  <!-- Imagen de fondo -->
+  <img src="../../src/assets/blanca 3-03.png" alt="img_sect" class="hidden md:flex md:absolute md:mt-10 md:w-full md:h-full md:object-fill lg:object-fill">
+  <img src="../../src/assets/blanca 2-03.png" alt="img_sect_mobile" class="absolute mt-10 w-full h-full object-fill md:hidden">
+
+  <!-- Panel 1: ¿Para quién? -->
+  <div class="panel-faq lg:block absolute z-10 w-85 h-120 left-1/12 md:left-1/4 lg:left-1/5 top-1/5">
+    <h2 class="text-[#CC8710] mb-2 font-bold uppercase text-[16px] sm:text-3xl lg:text-[20px] tracking-[2px] sm:tracking-[4px] lg:tracking-[6px]"
+    style="font-family: 'Oswald', sans-serif;">¿Para quién está destinado SPL?</h2>
+    <hr class="mb-2 border-1 border-t border-[#CC8710]">
+    <p class="text-black leading-7 font-light text-[14px]">SPL está destinado a todas las personas y organizaciones que forman parte del mundo deportivo, desde deportistas que buscan
+      participar en torneos y mejorar su rendimiento, hasta organizadores, clubes, federaciones y organizadores independientes que
+      necesitan gestionar sus competencias de manera sencilla y eficiente. <br> <br>
+      También está pensado para instituciones educativas, comunidades
+      y grupos que deseen impulsar actividades deportivas, fomentar la participación y crear nuevas oportunidades de competencia. Su objetivo
+      es ofrecer una plataforma accesible y versátil que conecte a todos los actores del ámbito
+      deportivo, facilitando la organización, la participación y el crecimiento del deporte en todas sus formas.</p>
+  </div>
+
+  <!-- Panel 2: contenedor -->
+  <div class="absolute z-10 w-85 h-120 left-1/12 md:left-1/4 lg:left-200 top-1/5">
+
+    <!-- Panel 2A: Tipos de deportes -->
+    <div class="panel-faq hidden lg:block">
+      <h2 class="text-[#CC8710] mb-2 font-bold uppercase text-[16px] sm:text-3xl lg:text-[20px] tracking-[2px] sm:tracking-[4px] lg:tracking-[6px]"
+      style="font-family: 'Oswald', sans-serif;">¿Qué tipos de deportes puedo organizar?</h2>
+      <hr class="mb-2 border-1 border-t border-[#CC8710]">
+      <p class="text-black leading-7 font-light text-[14px] lg:text-base">SPL está diseñado para adaptarse a una gran variedad de disciplinas,
+        desde deportes tradicionales como fútbol, básquetbol y
+        vóley hasta deportes electrónicos, juegos de mesa y competencias mentales.</p>
+    </div>
+
+    <!-- Panel 2B: Participar  -->
+    <div class="panel-faq hidden lg:block lg:mt-5">
+      <h2 class="text-[#CC8710] mb-2 font-bold uppercase text-[16px] sm:text-3xl lg:text-[20px] tracking-[2px] sm:tracking-[4px] lg:tracking-[6px]"
+      style="font-family: 'Oswald', sans-serif;">¿Puedo participar en torneos sin organizarlos?</h2>
+      <hr class="mb-2 border-1 border-t border-[#CC8710]">
+      <p class="text-black leading-7 font-light text-[14px] lg:text-base">¡Sí! Puedes explorar los torneos disponibles, consultar
+        sus requisitos e inscribirte en las competencias que se adapten a tus intereses.</p>
+    </div>
+
+    <!-- Panel 2C: Crear un torneo -->
+    <div class="panel-faq hidden lg:block lg:mt-5">
+      <h2 class="text-[#CC8710] mb-2 font-bold uppercase text-[16px] sm:text-3xl lg:text-[20px] tracking-[2px] sm:tracking-[4px] lg:tracking-[6px]"
+      style="font-family: 'Oswald', sans-serif;">¿Cómo puedo crear un torneo?</h2>
+      <hr class="mb-2 border-1 border-t border-[#CC8710]">
+      <p class="text-black leading-7 font-light text-[14px] lg:text-base">Crear un torneo es sencillo. Regístrate en SPL, accede a
+        las herramientas de creación y configura los detalles de tu competencia, como el nombre,
+        la disciplina, las fechas, los participantes y el sistema de competición.</p>
+    </div>
+
+  </div>
+
+  <!-- Panel 3: ¿Es gratis? -->
+  <div class="panel-faq hidden lg:block absolute z-10 w-85 h-120 left-1/12 md:left-1/4 lg:left-300 top-1/5">
+    <h2 class="text-[#CC8710] mb-2 font-bold uppercase text-2xl sm:text-3xl lg:text-[20px] tracking-[2px] sm:tracking-[4px] lg:tracking-[6px]"
+    style="font-family: 'Oswald', sans-serif;">¿Es gratis?</h2>
+    <hr class="mb-2 border-1 border-t border-[#CC8710]">
+    <p class="text-black leading-7 font-light"> ¡Sí! SPL es una plataforma totalmente gratuita y de libre uso.
+    Puedes crear, organizar, gestionar y participar en torneos sin
+    preocuparte por costos ni suscripciones. Nuestro objetivo es
+    brindarte las herramientas necesarias para que puedas organizar
+    competencias de forma sencilla, accesible y eficiente,
+    sin importar el deporte o la disciplina que elijas.
+    <br><br>
+    ¡En SPL, competir está al alcance de todos!
+      <br> <br> <a href="#" class="font-bold border p-4 transition-all duration-300 hover:text-[#CC8710] hover:translate-x-4 active:scale-95" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;">¡Descubre nuestras membresías!</a></p>
+  </div>
+
+  <!-- Flechas: solo mobile y tablet -->
+  <div class="lg:hidden absolute bottom-6 inset-x-0 z-20 flex justify-center gap-16">
+    <button id="faq-prev" aria-label="Anterior" class="text-black transition-all duration-300 hover:text-[#CC8710] active:scale-90">
+      <span class="material-symbols-outlined text-[48px]">keyboard_double_arrow_left</span>
+    </button>
+    <button id="faq-next" aria-label="Siguiente" class="text-black transition-all duration-300 hover:text-[#CC8710] active:scale-90">
+      <span class="material-symbols-outlined text-[48px]">keyboard_double_arrow_right</span>
+    </button>
+  </div>
+</section>
+</main>
+
+  <footer class="w-full bg-[#1B1B1B] py-12">
+  <div class="container mx-auto px-6 xl:max-w-[1100px] 2xl:max-w-[1350px]">
+
+    <!-- Logo y descripción -->
+<div class="flex flex-col items-center">
+
+  <!-- línea - logo - línea -->
+  <div class="flex items-center w-full gap-4">
+    <hr class="hr-neon h-[2px] border-0 flex-1">
+    <img src="../../src/assets/SPL Sports League Logo.png" alt="Logo" class="w-60 md:w-80">
+    <hr class="hr-neon h-[2px] border-0 flex-1">
+  </div>
+
+  <p class="text-center text-white w-[100%] md:w-[50%]">
+    Tu espacio para <span class="text-[#CB8610] font-bold">competir, organizar y crecer</span>.
+    Conectamos deportistas, organizadores y
+    comunidades a través de una plataforma
+    diseñada para <span class="text-[#CB8610] font-bold">simplificar</span>
+    la gestión de torneos y <span class="text-[#CB8610] font-bold">fomentar</span> la competencia.
+  </p>
+</div>
+
+    <!-- Columnas de links -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8 mt-12 md:text-center">
+
+      <div>
+        <h2 class="text-[18px] font-bold text-white">Navegación</h2>
+        <ul>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Inicio</a></li>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="creaciontorneo.html">Crea</a></li>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="torneosactivos.html">Descubre</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-[18px] font-bold text-white">Ayuda y Soporte</h2>
+        <ul>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Preguntas frecuentes</a></li>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Reportar un problema</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-[18px] font-bold text-white">Información legal</h2>
+        <ul>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Términos y condiciones</a></li>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Política de privacidad</a></li>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Política de cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex flex-col justify-center items-center mt-20">
+      <h2 class="text-[#656565] text-[12px] my-2">© 2026 SPL. Todos los derechos reservados.</h2>
+      <h2 class="text-[#656565] text-[12px]">Hecho para quienes viven la competencia.</h2>
+    </div>
+
+  </div>
+</footer>
+  <script src="../../src/js/main.js" defer></script>
+  </body>
+</html>
