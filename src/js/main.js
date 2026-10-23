@@ -1324,7 +1324,7 @@ const paginaActual = window.location.pathname.split("/").pop();
 
 document.querySelectorAll("nav a, #menu-movil a").forEach(function (enlace) {
   if (paginaActual !== "" && enlace.getAttribute("href") === paginaActual) {
-    enlace.style.color = "#9725BA";
+    enlace.style.color = "#CC8710";
   }
 });
 
@@ -1580,9 +1580,9 @@ if (botonesTabs.length > 0) {
 }
 
 
-// ============================================================
+// 
 //  PERFIL Y CUENTA (perfil.html y configuracion.html)
-// ============================================================
+// 
 const contenedorCuenta = document.getElementById("contenedor-cuenta");
 
 if (contenedorCuenta) {
@@ -1675,11 +1675,6 @@ if (contenedorCuenta) {
       elemento.textContent = texto;
     }
   }
-
-  // **********@gmail.com
-  function ocultarCorreo(correo) {
-    const partes = correo.split("@");
-    return "**********@" + partes[1];
   }
 
   function pintarPerfil() {
@@ -1798,7 +1793,7 @@ if (contenedorCuenta) {
 
   // ---------- Ventana de configuración (solo perfil.html) ----------
   const vistaConfig = document.getElementById("vista-configuracion");
-
+{
   if (vistaConfig) {
 
     function cerrarConfig() {
@@ -1831,10 +1826,9 @@ if (contenedorCuenta) {
   pintarPerfil();
 }
 
-
-// ============================================================
+// 
 //  CALENDARIO
-// ============================================================
+// 
 const diasContenedor = document.getElementById("dias-contenedor");
 
 if (diasContenedor) {
@@ -1985,4 +1979,35 @@ if (diasContenedor) {
   });
 
   pintarCalendario();
+}
+
+const formReporte = document.getElementById("formReporte");
+ 
+if (formReporte) {
+  formReporte.addEventListener("submit", function (e) {
+    e.preventDefault();
+ 
+    const nombre = document.getElementById("reporteNombre").value.trim();
+    const apellido = document.getElementById("reporteApellido").value.trim();
+    const email = document.getElementById("reporteEmail").value.trim();
+    const descripcion = document.getElementById("reporteDescripcion").value.trim();
+    const mensaje = document.getElementById("mensajeReporte");
+ 
+    if (nombre === "" || apellido === "" || email === "" || descripcion === "") {
+      mensaje.style.color = "#EF4444";
+      mensaje.textContent = "Completa todos los campos";
+      return;
+    }
+ 
+    if (descripcion.length < 10) {
+      mensaje.style.color = "#EF4444";
+      mensaje.textContent = "Describe el problema con un poco más de detalle";
+      return;
+    }
+ 
+    // Modo prueba: todavía no se envía al servidor
+    mensaje.style.color = "#CC8710";
+    mensaje.textContent = "Reporte enviado. ¡Gracias por avisarnos!";
+    formReporte.reset();
+  });
 }
