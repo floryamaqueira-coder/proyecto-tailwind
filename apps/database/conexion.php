@@ -80,5 +80,4 @@ try {
         "message" => "Error de conexión: " . $e->getMessage()
     ]));
 }
-
 ?>

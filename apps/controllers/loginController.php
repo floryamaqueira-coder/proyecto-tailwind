@@ -1,137 +1,57 @@
 <?php
-
-// Iniciamos la sesión de PHP. Esto tiene que hacerse
-// antes de imprimir cualquier cosa en la página, por eso
-// va como primera línea del archivo.
-//
-// Gracias a esto podremos guardar datos del usuario
-// (como su id o su nombre) para recordarlo entre
-// distintas páginas mientras esté logueado.
-session_start();
-
-// Indicamos que este archivo va a devolver
-// las respuestas en formato JSON.
-header('Content-Type: application/json');
-
-
-// Incluimos el archivo que contiene la conexión
-// con la base de datos.
+require_once __DIR__ . '/../helpers/seguridad.php';
 require_once __DIR__ . '/../database/conexion.php';
-
-
-// Incluimos el modelo de usuarios, que contiene
-// las funciones relacionadas con los usuarios.
 require_once __DIR__ . '/../models/usuarios.php';
+iniciarSesionSegura();
 
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    responder(['success' => false, 'message' => 'Método no permitido.'], 405);
+}
+exigirCsrf();
 
-// Comprobamos que la petición que llegó al servidor
-// utiliza el método POST.
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+$email      = strtolower(trim($_POST['email'] ?? ''));
+$contrasena = $_POST['contrasena'] ?? '';
 
-    // Obtenemos el correo electrónico enviado desde el formulario.
-    $email = trim($_POST['email'] ?? '');
-
-    // Obtenemos la contraseña.
-    //
-    // No usamos trim() porque no queremos modificar
-    // lo que el usuario escribió como contraseña.
-    $contrasena = $_POST['contrasena'] ?? '';
-
-
-    // Comprobamos que ambos campos hayan sido completados.
-    if (empty($email) || empty($contrasena)) {
-
-        echo json_encode([
-            'success' => false,
-            'message' => 'Por favor, completa todos los campos.'
-        ]);
-
-        exit;
-    }
-
-
-    // Comprobamos que el correo tenga un formato válido.
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-
-        echo json_encode([
-            'success' => false,
-            'message' => 'El formato del correo electrónico no es válido.'
-        ]);
-
-        exit;
-    }
-
-
-    // Utilizamos try para poder manejar posibles errores
-    // de la base de datos.
-    try {
-
-        // Llamamos a la función verificarLogin().
-        //
-        // Esta función busca al usuario por su email
-        // y compara la contraseña con password_verify().
-        $usuario = verificarLogin($pdo, $email, $contrasena);
-
-        // Comprobamos si las credenciales fueron correctas.
-        if ($usuario) {
-
-            // Guardamos los datos del usuario en la sesión.
-            //
-            // Esto nos permite saber, en cualquier otra página
-            // PHP del proyecto, qué usuario inició sesión.
-            $_SESSION['usuario_id']       = $usuario['id_usuaeio'];
-            $_SESSION['usuario_nombre']   = $usuario['nombre'];
-            $_SESSION['usuario_apellido'] = $usuario['apellido'];
-            $_SESSION['usuario_email']    = $usuario['email'];
-            $_SESSION['usuario_rol']      = $usuario['rol'];
-
-            // Informamos a JavaScript que el inicio de sesión
-            // se realizó correctamente.
-            echo json_encode([
-                'success' => true,
-                'message' => 'Inicio de sesión exitoso.',
-                'usuario' => [
-                    'nombre'   => $usuario['nombre'],
-                    'apellido' => $usuario['apellido'],
-                    'email'    => $usuario['email'],
-                    'rol'      => $usuario['rol']
-                ]
-            ]);
-
-        } else {
-
-            // Si el email no existe o la contraseña no coincide,
-            // enviamos un mensaje de error.
-            //
-            // Por seguridad no indicamos cuál de los dos datos
-            // está mal, solo que las credenciales son incorrectas.
-            echo json_encode([
-                'success' => false,
-                'message' => 'Correo o contraseña incorrectos.'
-            ]);
-        }
-
-
-    // Capturamos errores relacionados con PDO
-    // y la base de datos.
-    } catch (PDOException $e) {
-
-        echo json_encode([
-            'success' => false,
-            'message' => 'Error en la base de datos: ' . $e->getMessage()
-        ]);
-    }
-
-
-} else {
-
-    // Si alguien intenta acceder a este controlador
-    // utilizando un método diferente a POST,
-    // rechazamos la petición.
-    echo json_encode([
-        'success' => false,
-        'message' => 'Método de petición no permitido.'
-    ]);
+if ($email === '' || $contrasena === '') {
+    responder(['success' => false, 'message' => 'Por favor, completa todos los campos.'], 400);
+}
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    responder(['success' => false, 'message' => 'El formato del correo electrónico no es válido.'], 400);
 }
 
+try {
+    if (cuentaBloqueada($pdo, $email)) {
+        registrarAuditoria($pdo, null, 'LOGIN_BLOQUEADO', $email);
+        responder(['success' => false, 'message' => 'Demasiados intentos. Espera 15 minutos.'], 429);
+    }
+
+    $usuario = verificarLogin($pdo, $email, $contrasena);
+
+    if (!$usuario) {
+        $stmt = $pdo->prepare("INSERT INTO intento_login (email, ip) VALUES (:e, :ip)");
+        $stmt->execute([':e' => $email, ':ip' => obtenerIp()]);
+        registrarAuditoria($pdo, null, 'LOGIN_FALLIDO', $email);
+        logFallidoArchivo($email);
+        responder(['success' => false, 'message' => 'Correo o contraseña incorrectos.'], 401);
+    }
+
+    // Éxito: limpiar intentos y renovar la sesión (evita fijación de sesión)
+    $stmt = $pdo->prepare("DELETE FROM intento_login WHERE email = :e");
+    $stmt->execute([':e' => $email]);
+    session_regenerate_id(true);
+
+    $_SESSION['usuario_id']       = $usuario['id_usuario'];
+    $_SESSION['usuario_nombre']   = $usuario['nombre'];
+    $_SESSION['usuario_apellido'] = $usuario['apellido'];
+    $_SESSION['usuario_email']    = $usuario['email'];
+    $_SESSION['usuario_rol']      = $usuario['rol'];
+    unset($_SESSION['csrf']);   // token nuevo para la sesión nueva
+
+    registrarAuditoria($pdo, $usuario['id_usuario'], 'LOGIN_OK', '');
+    responder(['success' => true, 'message' => 'Inicio de sesión exitoso.']);
+
+} catch (PDOException $e) {
+    error_log($e->getMessage());
+    responder(['success' => false, 'message' => 'Error interno del servidor.'], 500);
+}
 ?>
