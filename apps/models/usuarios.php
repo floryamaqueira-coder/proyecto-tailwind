@@ -25,7 +25,7 @@ function registrarUsuario($pdo, $nombre, $apellido, $email, $contrasena, $rol) {
 
 // Obtiene todos los usuarios con email para verificar duplicados e iniciar sesión
 function obtenerUsuarioPorEmail($pdo, $email) {
-    $stmt = $pdo->prepare("SELECT id, nombre, apellido, email, contrasena, rol FROM usuario WHERE email = :email");
+    $stmt = $pdo->prepare("SELECT id_usuario, nombre, apellido, email, contrasena, rol FROM usuario WHERE email = :email");
     $stmt->execute(['email' => $email]);
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }

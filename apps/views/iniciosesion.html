@@ -30,7 +30,7 @@
         <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="creaciontorneo.html">Crea</a></li>
         <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="iniciosesion.html">Únete</a></li>
         <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="torneosactivos.html">Descubre</a></li>
-        <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="">Soporte</a></li>
+        <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="soporte.html">Soporte</a></li>
       </ul>
     </nav>
 
@@ -54,22 +54,22 @@
       <a href="creaciontorneo.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Crea</a>
       <a href="iniciosesion.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Únete</a>
       <a href="torneosactivos.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Descubre</a>
-      <a href="#" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Soporte</a>
+      <a href="soporte.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Soporte</a>
     </aside>
   </header>
 
     <!-- Márgenes -->
-    <div class="container mx-auto px-4 xl:max-w-[1100px] 2xl:max-w-[1350px]">
+    <div class="container mx-auto px-4 w-1/2">
 
       <!-- Box Inicio de sesión / Registro -->
-      <section class="relative flex justify-center items-center mt-10">
+      <section class="relative flex justify-center items-center mt-25">
 
-        <div class="borde-neon flex flex-col items-center rounded-3xl w-full min-h-[80vh] p-5 border border-[#CC8710] text-white">
+        <div class="borde-neon flex flex-col items-center rounded-3xl w-full min-h-[80vh] p-5 border border-[#CC8710] text-white" data-color="#36873B">
 
           <!--  VISTA: INICIO DE SESIÓN -->
           <div id="vista-login" class="w-full flex flex-col items-center">
 
-            <h2 class="text-[#CC8710] font-bold uppercase text-2xl sm:text-3xl lg:text-[35px] tracking-[2px] sm:tracking-[4px] lg:tracking-[6px]"
+            <h2 class="text-[#36873B] font-bold uppercase text-2xl sm:text-3xl lg:text-[35px] tracking-[2px] sm:tracking-[4px] lg:tracking-[6px]"
                 style="font-family: 'Oswald', sans-serif;">Inicia sesión</h2>
             <hr class="hr-neon h-[2px] w-full my-5 border-0">
 
@@ -78,16 +78,16 @@
               <div class="input-group relative mb-6">
                 <label class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Email</label>
                 <input type="email" id="email" name="email" required autocomplete="off"
-                       class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 focus:outline-none focus:border-[#CC8710] transition duration-300">
-                <ion-icon name="mail-outline" class="absolute right-1 bottom-2 text-xl text-[#CC8710]"></ion-icon>
+                       class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 focus:outline-none focus:border-[#36873B] transition duration-300">
+                <ion-icon name="mail-outline" class="absolute right-1 bottom-2 text-xl text-[#36873B]"></ion-icon>
               </div>
 
               <!-- Contraseña -->
               <div class="input-group relative mb-6">
                 <label class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Contraseña</label>
                 <input type="password" id="contrasena" name="contrasena" required
-                       class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 focus:outline-none focus:border-[#CC8710] transition duration-300">
-                <ion-icon name="lock-closed-outline" class="absolute right-1 bottom-2 text-xl text-[#CC8710]"></ion-icon>
+                       class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 focus:outline-none focus:border-[#36873B] transition duration-300">
+                <ion-icon name="lock-closed-outline" class="absolute right-1 bottom-2 text-xl text-[#36873B]"></ion-icon>
               </div>
 
               <!-- Mensaje de error -->
@@ -96,20 +96,20 @@
               <!-- Opciones intermedias -->
               <div class="options-row flex justify-between items-center text-sm text-gray-300 mb-6">
                 <label class="remember-me flex items-center gap-2 cursor-pointer">
-                  <input type="checkbox" class="accent-[#CC8710]"> Recuérdame
+                  <input type="checkbox" class="accent-[#36873B]"> Recuérdame
                 </label>
-                <a href="#" class="transition duration-300 hover:text-[#CC8710]">Olvidé mi contraseña</a>
+                <a href="#" class="transition duration-300 hover:text-[#36873B]">Olvidé mi contraseña</a>
               </div>
 
               <!-- Botón -->
               <button type="submit"
-                      class="btn-submit w-full text-white uppercase text-sm tracking-widest border border-[#CC8710] px-6 py-3 cursor-pointer transition-all duration-300 hover:bg-[#CC8710] active:scale-95">
+                      class="btn-submit w-full text-white uppercase text-sm tracking-widest border border-[#36873B] px-6 py-3 cursor-pointer transition-all duration-300 hover:bg-[#36873B] active:scale-95">
                 Acceder
               </button>
 
               <!-- Cambiar a registro -->
               <div class="register-link text-center mt-6 text-sm text-gray-300">
-                <p>¿No tienes una cuenta? <a href="#" id="link-registro" class="font-bold text-[#CC8710] transition duration-300 hover:underline">Registrarse</a></p>
+                <p>¿No tienes una cuenta? <a href="#" id="link-registro" class="font-bold text-[#36873B] transition duration-300 hover:underline">Registrarse</a></p>
               </div>
             </form>
 
@@ -118,7 +118,7 @@
           <!-- VISTA: REGISTRO -->
           <div id="vista-registro" class="hidden w-full flex flex-col items-center">
 
-            <h2 class="text-[#CC8710] font-bold uppercase text-2xl sm:text-3xl lg:text-[35px] tracking-[2px] sm:tracking-[4px] lg:tracking-[6px]"
+            <h2 class="text-[#36873B] font-bold uppercase text-2xl sm:text-3xl lg:text-[35px] tracking-[2px] sm:tracking-[4px] lg:tracking-[6px]"
                 style="font-family: 'Oswald', sans-serif;">Regístrate</h2>
             <hr class="hr-neon h-[2px] w-full my-5 border-0">
 
@@ -128,40 +128,40 @@
               <div class="input-group relative mb-5">
                 <label class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Nombre</label>
                 <input type="text" id="nombre" name="nombre" required
-                       class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 focus:outline-none focus:border-[#CC8710] transition duration-300">
-                <ion-icon name="person-outline" class="absolute right-1 bottom-2 text-xl text-[#CC8710]"></ion-icon>
+                       class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 focus:outline-none focus:border-[#36873B] transition duration-300">
+                <ion-icon name="person-outline" class="absolute right-1 bottom-2 text-xl text-[#36873B]"></ion-icon>
               </div>
 
               <!-- Apellido -->
               <div class="input-group relative mb-5">
                 <label class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Apellido</label>
                 <input type="text" id="apellido" name="apellido" required
-                       class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 focus:outline-none focus:border-[#CC8710] transition duration-300">
-                <ion-icon name="person-outline" class="absolute right-1 bottom-2 text-xl text-[#CC8710]"></ion-icon>
+                       class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 focus:outline-none focus:border-[#36873B] transition duration-300">
+                <ion-icon name="person-outline" class="absolute right-1 bottom-2 text-xl text-[#36873B]"></ion-icon>
               </div>
 
               <!-- Email -->
               <div class="input-group relative mb-5">
                 <label class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Email</label>
                 <input type="email" id="emailRegistro" name="email" required autocomplete="off"
-                       class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 focus:outline-none focus:border-[#CC8710] transition duration-300">
-                <ion-icon name="mail-outline" class="absolute right-1 bottom-2 text-xl text-[#CC8710]"></ion-icon>
+                       class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 focus:outline-none focus:border-[#36873B] transition duration-300">
+                <ion-icon name="mail-outline" class="absolute right-1 bottom-2 text-xl text-[#36873B]"></ion-icon>
               </div>
 
               <!-- Contraseña -->
               <div class="input-group relative mb-5">
                 <label class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Contraseña</label>
                 <input type="password" id="password" name="contrasena" required oninput="validarPassword()"
-                       class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 focus:outline-none focus:border-[#CC8710] transition duration-300">
-                <ion-icon name="lock-closed-outline" class="absolute right-1 bottom-2 text-xl text-[#CC8710]"></ion-icon>
+                       class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 focus:outline-none focus:border-[#36873B] transition duration-300">
+                <ion-icon name="lock-closed-outline" class="absolute right-1 bottom-2 text-xl text-[#36873B]"></ion-icon>
               </div>
 
               <!-- Repetir contraseña -->
               <div class="input-group relative mb-5">
                 <label class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Repite tu contraseña</label>
                 <input type="password" id="confirm-password" required oninput="validarPassword()"
-                       class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 focus:outline-none focus:border-[#CC8710] transition duration-300">
-                <ion-icon name="lock-closed-outline" class="absolute right-1 bottom-2 text-xl text-[#CC8710]"></ion-icon>
+                       class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 focus:outline-none focus:border-[#36873B] transition duration-300">
+                <ion-icon name="lock-closed-outline" class="absolute right-1 bottom-2 text-xl text-[#36873B]"></ion-icon>
               </div>
 
               <!-- Mensaje de error -->
@@ -169,13 +169,13 @@
 
               <!-- Botón -->
               <button type="submit"
-                      class="btn-submit w-full text-white uppercase text-sm tracking-widest border border-[#CC8710] px-6 py-3 cursor-pointer transition-all duration-300 hover:bg-[#CC8710] active:scale-95">
+                      class="btn-submit w-full text-white uppercase text-sm tracking-widest border border-[#36873B] px-6 py-3 cursor-pointer transition-all duration-300 hover:bg-[#36873B] active:scale-95">
                 Registrarme
               </button>
 
               <!-- Volver a inicio de sesión -->
               <div class="register-link text-center mt-6 text-sm text-gray-300">
-                <p>¿Ya tienes una cuenta? <a href="#" id="link-login" class="font-bold text-[#CC8710] transition duration-300 hover:underline">Inicia sesión</a></p>
+                <p>¿Ya tienes una cuenta? <a href="#" id="link-login" class="font-bold text-[#36873B] transition duration-300 hover:underline">Inicia sesión</a></p>
               </div>
             </form>
 
@@ -193,29 +193,29 @@
 
   <!-- línea - logo - línea -->
   <div class="flex items-center w-full gap-4">
-    <hr class="hr-neon h-[2px] border-0 flex-1">
+    <hr class="hr-neon h-[2px] border-0 flex-1" data-color="#36873B">
     <img src="../../src/assets/SPL Sports League Logo.png" alt="Logo" class="w-60 md:w-80">
-    <hr class="hr-neon h-[2px] border-0 flex-1">
+    <hr class="hr-neon h-[2px] border-0 flex-1" data-color="#36873B">
   </div>
 
   <p class="text-center text-white w-[100%] md:w-[50%]">
-    Tu espacio para <span class="text-[#CB8610] font-bold">competir, organizar y crecer</span>.
+    Tu espacio para <span class="text-[#36873B] font-bold">competir, organizar y crecer</span>.
     Conectamos deportistas, organizadores y
     comunidades a través de una plataforma
-    diseñada para <span class="text-[#CB8610] font-bold">simplificar</span>
-    la gestión de torneos y <span class="text-[#CB8610] font-bold">fomentar</span> la competencia.
+    diseñada para <span class="text-[#36873B] font-bold">simplificar</span>
+    la gestión de torneos y <span class="text-[#36873B] font-bold">fomentar</span> la competencia.
   </p>
 </div>
 
     <!-- Columnas de links -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12 md:text-center">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8 mt-12 md:text-center">
 
       <div>
         <h2 class="text-[18px] font-bold text-white">Navegación</h2>
         <ul>
           <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Inicio</a></li>
-          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Crea</a></li>
-          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Descubre</a></li>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="creaciontorneo.html">Crea</a></li>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="torneosactivos.html">Descubre</a></li>
         </ul>
       </div>
 
@@ -223,20 +223,7 @@
         <h2 class="text-[18px] font-bold text-white">Ayuda y Soporte</h2>
         <ul>
           <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Preguntas frecuentes</a></li>
-          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Centro de ayuda</a></li>
-          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Contacto</a></li>
-          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Reportar un problema</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h2 class="text-[18px] font-bold text-white">Planes</h2>
-        <ul>
-          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Plan gratuito</a></li>
-          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Plan Pro</a></li>
-          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Plan Premium</a></li>
-          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Comprar membresías</a></li>
-          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Gestionar membresía</a></li>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="soporte.html">Reportar un problema</a></li>
         </ul>
       </div>
 
@@ -246,7 +233,6 @@
           <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Términos y condiciones</a></li>
           <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Política de privacidad</a></li>
           <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Política de cookies</a></li>
-          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Política de cancelación</a></li>
         </ul>
       </div>
     </div>

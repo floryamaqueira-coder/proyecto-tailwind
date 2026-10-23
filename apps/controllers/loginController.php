@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             //
             // Esto nos permite saber, en cualquier otra página
             // PHP del proyecto, qué usuario inició sesión.
-            $_SESSION['usuario_id']       = $usuario['id'];
+            $_SESSION['usuario_id']       = $usuario['id_usuaeio'];
             $_SESSION['usuario_nombre']   = $usuario['nombre'];
             $_SESSION['usuario_apellido'] = $usuario['apellido'];
             $_SESSION['usuario_email']    = $usuario['email'];
@@ -134,4 +134,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ]);
 }
 
-?>s
+?>

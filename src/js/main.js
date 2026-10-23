@@ -235,13 +235,26 @@ if (faqBtnAnterior && faqBtnSiguiente) {
   faqMostrar();
 }
 
-// Líneas hr con efecto neón
+// Color por defecto si el elemento no tiene data-color
+const colorPorDefecto = "#CC8710";
+
+// Busca el color del propio elemento o, si no tiene, el del contenedor más cercano
+// (por ejemplo el del <body>). Si no hay ninguno, usa el color por defecto.
+function colorDe(elemento) {
+  const conColor = elemento.closest("[data-color]");
+  if (conColor) {
+    return conColor.dataset.color;
+  }
+  return colorPorDefecto;
+}
+
+// Líneas hr con efecto neón 
 const lineas = document.querySelectorAll(".hr-neon");
-const colorNeon = "#CC8710";
 
 // Estilo inicial de cada línea
 lineas.forEach(function (linea) {
-  linea.style.background = "linear-gradient(90deg, transparent, " + colorNeon + ", transparent)";
+  const color = colorDe(linea);
+  linea.style.background = "linear-gradient(90deg, transparent, " + color + ", transparent)";
   linea.style.backgroundSize = "200% 100%";
 });
 
@@ -250,13 +263,11 @@ let brillo = 2;     // tamaño del neoncito
 let subiendo = true;
 
 setInterval(function () {
-  // Mover la luz a lo largo de la línea
   posicion = posicion + 1;
   if (posicion >= 200) {
     posicion = 0;
   }
 
-  // El neoncito sube y baja entre 2 y 10
   if (subiendo) {
     brillo = brillo + 0.2;
     if (brillo >= 10) {
@@ -269,22 +280,20 @@ setInterval(function () {
     }
   }
 
-  // Aplicar a todas las líneas
   lineas.forEach(function (linea) {
+    const color = colorDe(linea);
     linea.style.backgroundPosition = posicion + "% 0%";
-    linea.style.filter = "drop-shadow(0 0 " + brillo + "px " + colorNeon + ")";
+    linea.style.filter = "drop-shadow(0 0 " + brillo + "px " + color + ")";
   });
 }, 30);
- 
-// Bordes con efecto neón
-const bordes = document.querySelectorAll(".borde-neon");
-const colorBorde = "#CC8710";
 
-let brilloBorde = 2;     // tamaño del resplandor
+//  Bordes con efecto neón 
+const bordes = document.querySelectorAll(".borde-neon");
+
+let brilloBorde = 2;
 let subiendoBorde = true;
 
 setInterval(function () {
-  // El resplandor sube y baja entre 2 y 12
   if (subiendoBorde) {
     brilloBorde = brilloBorde + 0.2;
     if (brilloBorde >= 12) {
@@ -297,11 +306,11 @@ setInterval(function () {
     }
   }
 
-  // Aplicar a todos los bordes
   bordes.forEach(function (borde) {
-    borde.style.borderColor = colorBorde;
+    const color = colorDe(borde);
+    borde.style.borderColor = color;
     borde.style.boxShadow =
-      "0 0 " + brilloBorde + "px " + colorBorde + ", inset 0 0 " + brilloBorde + "px " + colorBorde;
+      "0 0 " + brilloBorde + "px " + color + ", inset 0 0 " + brilloBorde + "px " + color;
   });
 }, 30);
 
@@ -415,9 +424,9 @@ if (formLogin) {
   });
 }
 
-// ===== PÁGINA PRINCIPAL =====
+//  PÁGINA PRINCIPAL 
 
-// ---------- 1. Perfil ----------
+//  1. Perfil 
 const perfilNombre = document.getElementById("perfil-nombre");
 
 if (perfilNombre) {
@@ -437,7 +446,7 @@ if (perfilNombre) {
   });
 }
 
-// ---------- 2. Buscador + galería de torneos activos ----------
+//  2. Buscador + galería de torneos activos
 const galeria = document.getElementById("galeria-torneos");
 const buscador = document.getElementById("buscador-torneos");
 const sinResultados = document.getElementById("sin-resultados");
@@ -484,7 +493,7 @@ if (galeria && buscador) {
   });
 }
 
-// ---------- 4. Mis torneos (array provisional) ----------
+//  4. Mis torneos (array provisional) 
 const misTorneos = [
   { nombre: "Copa Verano", deporte: "Fútbol", estado: "En curso" },
   { nombre: "Basket 3x3 Open", deporte: "Básquetbol", estado: "Inscripto" },
@@ -513,7 +522,7 @@ if (listaMisTorneos) {
   }
 }
 
-// ===== CREAR TORNEO (stepper) =====
+//  CREAR TORNEO (stepper)
 const formTorneo = document.getElementById("formTorneo");
 
 if (formTorneo) {
@@ -534,7 +543,7 @@ if (formTorneo) {
     e.preventDefault();
   });
 
-  // ---------- Mostrar el paso actual ----------
+  //  Mostrar el paso actual 
   function mostrarPaso() {
 
     // Mostrar solo el paso actual
@@ -553,10 +562,10 @@ if (formTorneo) {
       const texto = item.querySelector("span");
 
       if (indice + 1 <= pasoActual) {
-        circulo.style.backgroundColor = "#CC8710";
-        circulo.style.borderColor = "#CC8710";
+        circulo.style.backgroundColor = "#00D2ED";
+        circulo.style.borderColor = "#00D2ED";
         circulo.style.color = "#1B1B1B";
-        texto.style.color = "#CC8710";
+        texto.style.color = "#00D2ED";
       } else {
         circulo.style.backgroundColor = "transparent";
         circulo.style.borderColor = "rgba(255, 255, 255, 0.4)";
@@ -568,7 +577,7 @@ if (formTorneo) {
     // Colorear las líneas entre pasos
     stepLineas.forEach(function (linea, indice) {
       if (indice + 1 < pasoActual) {
-        linea.style.backgroundColor = "#CC8710";
+        linea.style.backgroundColor = "#00D2ED";
       } else {
         linea.style.backgroundColor = "rgba(255, 255, 255, 0.3)";
       }
@@ -591,7 +600,7 @@ if (formTorneo) {
     mensajeTorneo.textContent = "";
   }
 
-  // ---------- Modalidad: equipos o individual ----------
+  // Modalidad: equipos o individual 
   function cambiarModalidad() {
     const esEquipo = selModalidad.value === "equipos";
 
@@ -618,8 +627,8 @@ if (formTorneo) {
   // ---------- Botones de los días ----------
   function pintarDia(boton) {
     if (boton.dataset.activo === "si") {
-      boton.style.backgroundColor = "#CC8710";
-      boton.style.borderColor = "#CC8710";
+      boton.style.backgroundColor = "#00D2ED";
+      boton.style.borderColor = "#00D2ED";
       boton.style.color = "#1B1B1B";
     } else {
       boton.style.backgroundColor = "transparent";
@@ -651,7 +660,7 @@ if (formTorneo) {
     return lista;
   }
 
-  // ---------- Validar cada paso ----------
+  //  Validar cada paso 
   function validarPaso(numero) {
 
     if (numero === 1) {
@@ -701,7 +710,7 @@ if (formTorneo) {
     return "";   // vacío = todo bien
   }
 
-  // ---------- Resumen del paso 4 ----------
+  // Resumen del paso 4 
   function formatearFecha(fecha) {
     const partes = fecha.split("-");
     return partes[2] + "/" + partes[1] + "/" + partes[0];
@@ -1283,7 +1292,7 @@ if (selectTorneo) {
   mostrarPerfilTorneo();
 }
 
-// ===== PÁGINAS DE LA APP (torneos, mis torneos, perfil, configuración, calendario) =====
+//  PÁGINAS DE LA APP (torneos, mis torneos, perfil, configuración, calendario) 
 
 const estiloOswald = "font-family: 'Oswald', sans-serif;";
 
@@ -1298,16 +1307,16 @@ function ponerAviso(elemento, texto, esError) {
   if (esError) {
     elemento.style.color = "#EF4444";
   } else {
-    elemento.style.color = "#CC8710";
+    elemento.style.color = "#9725BA";
   }
 }
 
 // Color de la etiqueta de estado de un torneo
 function claseEstadoTorneo(estado) {
   if (estado === "En curso") {
-    return "bg-[#CC8710] text-[#1B1B1B]";
+    return "bg-[#9725BA] text-[#1B1B1B]";
   }
-  return "border border-[#CC8710] text-[#CC8710]";
+  return "border border-[#9725BA] text-[#9725BA]";
 }
 
 // Marca en naranja el enlace de la página actual en el menú
@@ -1315,7 +1324,7 @@ const paginaActual = window.location.pathname.split("/").pop();
 
 document.querySelectorAll("nav a, #menu-movil a").forEach(function (enlace) {
   if (paginaActual !== "" && enlace.getAttribute("href") === paginaActual) {
-    enlace.style.color = "#CC8710";
+    enlace.style.color = "#9725BA";
   }
 });
 
@@ -1352,8 +1361,8 @@ if (grillaTorneos) {
   function pintarChips() {
     chips.forEach(function (chip) {
       if (chip.dataset.deporte === selectDeporteTorneo.value) {
-        chip.style.backgroundColor = "#CC8710";
-        chip.style.borderColor = "#CC8710";
+        chip.style.backgroundColor = "#9725BA";
+        chip.style.borderColor = "#9725BA";
         chip.style.color = "#1B1B1B";
       } else {
         chip.style.backgroundColor = "transparent";
@@ -1398,18 +1407,18 @@ if (grillaTorneos) {
 
       if (coincideDeporte && coincideTexto) {
         grillaTorneos.innerHTML +=
-          '<article class="flex flex-col rounded-3xl border border-white/20 p-5 text-white transition duration-300 hover:border-[#CC8710]">' +
+          '<article class="flex flex-col rounded-3xl border border-white/20 p-5 text-white transition duration-300 hover:border-[#9725BA]">' +
             '<span class="self-start text-xs uppercase tracking-widest rounded-full px-3 py-1 mb-3 ' + claseEstadoTorneo(t.estado) + '">' + t.estado + '</span>' +
             '<h2 class="text-xl font-semibold" style="' + estiloOswald + '">' + limpiarTexto(t.nombre) + '</h2>' +
             '<p class="flex items-center gap-2 text-sm text-gray-300 mt-1">' +
-              '<ion-icon name="' + t.icono + '" class="text-[#CC8710]"></ion-icon> ' + limpiarTexto(t.deporteTexto) + ' · ' + limpiarTexto(t.formato) +
+              '<ion-icon name="' + t.icono + '" class="text-[#9725BA]"></ion-icon> ' + limpiarTexto(t.deporteTexto) + ' · ' + limpiarTexto(t.formato) +
             '</p>' +
             '<div class="flex flex-col gap-1 text-sm text-gray-300 my-4">' +
               '<span><strong class="text-white">Lugar:</strong> ' + limpiarTexto(t.lugar) + '</span>' +
               '<span><strong class="text-white">Cupos:</strong> ' + t.cupos + '</span>' +
               '<span><strong class="text-white">Inicio:</strong> ' + t.inicio + '</span>' +
             '</div>' +
-            '<a href="torneo.html" class="mt-auto text-center text-white uppercase text-sm tracking-widest border border-[#CC8710] px-6 py-3 transition-all duration-300 hover:bg-[#CC8710] active:scale-95">Ver torneo</a>' +
+            '<a href="torneo.html" class="mt-auto text-center text-white uppercase text-sm tracking-widest border border-[#9725BA] px-6 py-3 transition-all duration-300 hover:bg-[#9725BA] active:scale-95">Ver torneo</a>' +
           '</article>';
         mostrados = mostrados + 1;
       }

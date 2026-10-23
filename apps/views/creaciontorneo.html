@@ -30,7 +30,7 @@
         <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="creaciontorneo.html">Crea</a></li>
         <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="iniciosesion.html">Únete</a></li>
         <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="torneosactivos.html">Descubre</a></li>
-        <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="">Soporte</a></li>
+        <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="soporte.html">Soporte</a></li>
       </ul>
     </nav>
 
@@ -54,21 +54,21 @@
       <a href="creaciontorneo.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Crea</a>
       <a href="iniciosesion.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Únete</a>
       <a href="torneosactivos.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Descubre</a>
-      <a href="#" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Soporte</a>
+      <a href="soporte.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Soporte</a>
     </aside>
   </header>
     <!-- Márgenes -->
     <div class="container mx-auto px-4 xl:max-w-[1100px] 2xl:max-w-[1350px]">
 
-      <section class="flex justify-center mt-10 mb-10">
+      <section class="flex justify-center mt-30 mb-10">
 
-        <div class="borde-neon flex flex-col items-center rounded-3xl w-full max-w-[700px] p-5 border border-[#CC8710] text-white">
+        <div class="borde-neon flex flex-col items-center rounded-3xl w-full max-w-[700px] p-5 border border-[#00D2ED] text-white" data-color="#00D2ED">
 
-          <h2 class="text-[#CC8710] font-bold uppercase text-2xl sm:text-3xl lg:text-[35px] tracking-[2px] sm:tracking-[4px] lg:tracking-[6px]"
+          <h2 class="text-[#00D2ED] font-bold uppercase text-2xl sm:text-3xl lg:text-[35px] tracking-[2px] sm:tracking-[4px] lg:tracking-[6px]"
               style="font-family: 'Oswald', sans-serif;">Nuevo torneo</h2>
           <hr class="hr-neon h-[2px] w-full my-5 border-0">
 
-          <!-- ================= STEPPER ================= -->
+          <!--  STEPPER  -->
           <div class="flex items-center w-full max-w-[500px] mb-8">
 
             <div class="step-item flex flex-col items-center gap-1">
@@ -99,7 +99,7 @@
 
           </div>
 
-          <!-- ================= FORMULARIO ================= -->
+          <!--  FORMULARIO  -->
           <form action="#" id="formTorneo" class="w-full max-w-[500px]">
 
             <!-- PASO 1: INFORMACIÓN -->
@@ -108,24 +108,24 @@
               <div class="relative mb-5">
                 <label for="nombreTorneo" class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Nombre del torneo</label>
                 <input type="text" id="nombreTorneo" placeholder="Ej: Copa de Verano"
-                       class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 placeholder-gray-500 focus:outline-none focus:border-[#CC8710] transition duration-300">
-                <ion-icon name="ribbon-outline" class="absolute right-1 bottom-2 text-xl text-[#CC8710] pointer-events-none"></ion-icon>
+                       class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 placeholder-gray-500 focus:outline-none focus:border-[#00D2ED] transition duration-300">
+                <ion-icon name="ribbon-outline" class="absolute right-1 bottom-2 text-xl text-[#00D2ED] pointer-events-none"></ion-icon>
               </div>
 
               <div class="relative mb-5">
                 <label for="modalidadTorneo" class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Modalidad</label>
                 <select id="modalidadTorneo"
-                        class="w-full appearance-none bg-[#1B1B1B] border-b border-white/40 text-white py-2 pr-8 cursor-pointer focus:outline-none focus:border-[#CC8710] transition duration-300">
+                        class="w-full appearance-none bg-[#1B1B1B] border-b border-white/40 text-white py-2 pr-8 cursor-pointer focus:outline-none focus:border-[#00D2ED] transition duration-300">
                   <option value="equipos">Equipos</option>
                   <option value="individual">Individual</option>
                 </select>
-                <ion-icon name="people-outline" class="absolute right-1 bottom-2 text-xl text-[#CC8710] pointer-events-none"></ion-icon>
+                <ion-icon name="people-outline" class="absolute right-1 bottom-2 text-xl text-[#00D2ED] pointer-events-none"></ion-icon>
               </div>
 
               <div class="relative mb-5">
                 <label for="deporteSelec" class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Deporte</label>
                 <input type="text" id="deporteSelec" list="deportes-sugeridos" placeholder="Escribe o selecciona uno"
-                       class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 placeholder-gray-500 focus:outline-none focus:border-[#CC8710] transition duration-300">
+                       class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 placeholder-gray-500 focus:outline-none focus:border-[#00D2ED] transition duration-300">
                 <datalist id="deportes-sugeridos">
                   <option value="Fútbol"></option>
                   <option value="Pádel"></option>
@@ -135,18 +135,18 @@
                   <option value="Handball"></option>
                   <option value="Videojuego"></option>
                 </datalist>
-                <ion-icon name="trophy-outline" class="absolute right-1 bottom-2 text-xl text-[#CC8710] pointer-events-none"></ion-icon>
+                <ion-icon name="trophy-outline" class="absolute right-1 bottom-2 text-xl text-[#00D2ED] pointer-events-none"></ion-icon>
               </div>
 
               <div class="relative mb-5">
                 <label for="categoria" class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Categoría / Nivel</label>
                 <select id="categoria"
-                        class="w-full appearance-none bg-[#1B1B1B] border-b border-white/40 text-white py-2 pr-8 cursor-pointer focus:outline-none focus:border-[#CC8710] transition duration-300">
+                        class="w-full appearance-none bg-[#1B1B1B] border-b border-white/40 text-white py-2 pr-8 cursor-pointer focus:outline-none focus:border-[#00D2ED] transition duration-300">
                   <option value="Amateur">Amateur</option>
                   <option value="Semi-Profesional">Semi-Profesional</option>
                   <option value="Profesional">Profesional</option>
                 </select>
-                <ion-icon name="medal-outline" class="absolute right-1 bottom-2 text-xl text-[#CC8710] pointer-events-none"></ion-icon>
+                <ion-icon name="medal-outline" class="absolute right-1 bottom-2 text-xl text-[#00D2ED] pointer-events-none"></ion-icon>
               </div>
 
             </div>
@@ -157,7 +157,7 @@
               <div class="relative mb-5">
                 <label for="formatoTorneo" class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Formato del torneo</label>
                 <select id="formatoTorneo"
-                        class="w-full appearance-none bg-[#1B1B1B] border-b border-white/40 text-white py-2 pr-8 cursor-pointer focus:outline-none focus:border-[#CC8710] transition duration-300">
+                        class="w-full appearance-none bg-[#1B1B1B] border-b border-white/40 text-white py-2 pr-8 cursor-pointer focus:outline-none focus:border-[#00D2ED] transition duration-300">
                   <option value="Eliminación simple">Eliminación simple</option>
                   <option value="Doble eliminación">Doble eliminación</option>
                   <option value="Sistema suizo">Sistema suizo</option>
@@ -165,45 +165,45 @@
                   <option value="Fase de grupos + eliminatoria">Fase de grupos + eliminatoria</option>
                   <option value="Liga (todos contra todos)">Liga (todos contra todos)</option>
                 </select>
-                <ion-icon name="git-network-outline" class="absolute right-1 bottom-2 text-xl text-[#CC8710] pointer-events-none"></ion-icon>
+                <ion-icon name="git-network-outline" class="absolute right-1 bottom-2 text-xl text-[#00D2ED] pointer-events-none"></ion-icon>
               </div>
 
               <!-- Solo modalidad equipos -->
               <div class="bloque-equipo relative mb-5">
                 <label for="equiposPart" class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Cantidad de equipos</label>
                 <select id="equiposPart"
-                        class="w-full appearance-none bg-[#1B1B1B] border-b border-white/40 text-white py-2 pr-8 cursor-pointer focus:outline-none focus:border-[#CC8710] transition duration-300">
+                        class="w-full appearance-none bg-[#1B1B1B] border-b border-white/40 text-white py-2 pr-8 cursor-pointer focus:outline-none focus:border-[#00D2ED] transition duration-300">
                   <option value="8">8 equipos</option>
                   <option value="16" selected>16 equipos</option>
                   <option value="32">32 equipos</option>
                 </select>
-                <ion-icon name="people-outline" class="absolute right-1 bottom-2 text-xl text-[#CC8710] pointer-events-none"></ion-icon>
+                <ion-icon name="people-outline" class="absolute right-1 bottom-2 text-xl text-[#00D2ED] pointer-events-none"></ion-icon>
               </div>
 
               <div class="bloque-equipo relative mb-5">
                 <label for="jugadoresPorEquipo" class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Jugadores titulares por equipo</label>
                 <input type="number" id="jugadoresPorEquipo" min="1" value="11" placeholder="Ej: 5 u 11"
-                       class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 placeholder-gray-500 focus:outline-none focus:border-[#CC8710] transition duration-300">
-                <ion-icon name="shirt-outline" class="absolute right-1 bottom-2 text-xl text-[#CC8710] pointer-events-none"></ion-icon>
+                       class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 placeholder-gray-500 focus:outline-none focus:border-[#00D2ED] transition duration-300">
+                <ion-icon name="shirt-outline" class="absolute right-1 bottom-2 text-xl text-[#00D2ED] pointer-events-none"></ion-icon>
               </div>
 
               <!-- Solo modalidad individual -->
               <div class="bloque-individual relative mb-5">
                 <label for="jugadoresPart" class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Cantidad de jugadores</label>
                 <select id="jugadoresPart"
-                        class="w-full appearance-none bg-[#1B1B1B] border-b border-white/40 text-white py-2 pr-8 cursor-pointer focus:outline-none focus:border-[#CC8710] transition duration-300">
+                        class="w-full appearance-none bg-[#1B1B1B] border-b border-white/40 text-white py-2 pr-8 cursor-pointer focus:outline-none focus:border-[#00D2ED] transition duration-300">
                   <option value="8">8 jugadores</option>
                   <option value="16" selected>16 jugadores</option>
                   <option value="32">32 jugadores</option>
                   <option value="64">64 jugadores</option>
                 </select>
-                <ion-icon name="person-outline" class="absolute right-1 bottom-2 text-xl text-[#CC8710] pointer-events-none"></ion-icon>
+                <ion-icon name="person-outline" class="absolute right-1 bottom-2 text-xl text-[#00D2ED] pointer-events-none"></ion-icon>
               </div>
 
               <div class="mb-5">
                 <label for="reglasGenerales" class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Reglas generales</label>
                 <textarea id="reglasGenerales" rows="3" placeholder="Describe las reglas del torneo..."
-                          class="w-full bg-transparent border border-white/40 rounded-lg text-white p-3 placeholder-gray-500 focus:outline-none focus:border-[#CC8710] transition duration-300"></textarea>
+                          class="w-full bg-transparent border border-white/40 rounded-lg text-white p-3 placeholder-gray-500 focus:outline-none focus:border-[#00D2ED] transition duration-300"></textarea>
               </div>
 
             </div>
@@ -214,13 +214,13 @@
               <div class="mb-5">
                 <label for="fechaInicio" class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Fecha de inicio</label>
                 <input type="date" id="fechaInicio" style="color-scheme: dark;"
-                       class="w-full bg-transparent border-b border-white/40 text-white py-2 focus:outline-none focus:border-[#CC8710] transition duration-300">
+                       class="w-full bg-transparent border-b border-white/40 text-white py-2 focus:outline-none focus:border-[#00D2ED] transition duration-300">
               </div>
 
               <div class="mb-5">
                 <label for="fechaFin" class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Fecha de finalización</label>
                 <input type="date" id="fechaFin" style="color-scheme: dark;"
-                       class="w-full bg-transparent border-b border-white/40 text-white py-2 focus:outline-none focus:border-[#CC8710] transition duration-300">
+                       class="w-full bg-transparent border-b border-white/40 text-white py-2 focus:outline-none focus:border-[#00D2ED] transition duration-300">
               </div>
 
               <div class="mb-5">
@@ -240,12 +240,12 @@
                 <div>
                   <label for="horaInicio" class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Hora inicio</label>
                   <input type="time" id="horaInicio" value="18:00" style="color-scheme: dark;"
-                         class="w-full bg-transparent border-b border-white/40 text-white py-2 focus:outline-none focus:border-[#CC8710] transition duration-300">
+                         class="w-full bg-transparent border-b border-white/40 text-white py-2 focus:outline-none focus:border-[#00D2ED] transition duration-300">
                 </div>
                 <div>
                   <label for="horaFin" class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Hora fin</label>
                   <input type="time" id="horaFin" value="23:00" style="color-scheme: dark;"
-                         class="w-full bg-transparent border-b border-white/40 text-white py-2 focus:outline-none focus:border-[#CC8710] transition duration-300">
+                         class="w-full bg-transparent border-b border-white/40 text-white py-2 focus:outline-none focus:border-[#00D2ED] transition duration-300">
                 </div>
               </div>
 
@@ -255,10 +255,10 @@
             <div id="step-4" class="hidden">
 
               <div class="border border-white/20 rounded-xl p-4 mb-5">
-                <h3 class="text-[#CC8710] font-bold uppercase tracking-widest mb-4" style="font-family: 'Oswald', sans-serif;">Resumen del torneo</h3>
+                <h3 class="text-[#00D2ED] font-bold uppercase tracking-widest mb-4" style="font-family: 'Oswald', sans-serif;">Resumen del torneo</h3>
 
                 <div class="flex items-start gap-3 mb-4">
-                  <ion-icon name="ribbon-outline" class="text-2xl text-[#CC8710]"></ion-icon>
+                  <ion-icon name="ribbon-outline" class="text-2xl text-[#00D2ED]"></ion-icon>
                   <div>
                     <small class="text-gray-400 uppercase tracking-widest">Nombre</small>
                     <p id="resNombre">-</p>
@@ -266,7 +266,7 @@
                 </div>
 
                 <div class="flex items-start gap-3 mb-4">
-                  <ion-icon name="trophy-outline" class="text-2xl text-[#CC8710]"></ion-icon>
+                  <ion-icon name="trophy-outline" class="text-2xl text-[#00D2ED]"></ion-icon>
                   <div>
                     <small class="text-gray-400 uppercase tracking-widest">Deporte / Categoría / Modalidad</small>
                     <p id="resDeporteCat">-</p>
@@ -274,7 +274,7 @@
                 </div>
 
                 <div class="flex items-start gap-3 mb-4">
-                  <ion-icon name="people-outline" class="text-2xl text-[#CC8710]"></ion-icon>
+                  <ion-icon name="people-outline" class="text-2xl text-[#00D2ED]"></ion-icon>
                   <div>
                     <small class="text-gray-400 uppercase tracking-widest">Formato / Participantes</small>
                     <p id="resFormatoEquipos">-</p>
@@ -282,7 +282,7 @@
                 </div>
 
                 <div class="flex items-start gap-3 mb-4">
-                  <ion-icon name="calendar-outline" class="text-2xl text-[#CC8710]"></ion-icon>
+                  <ion-icon name="calendar-outline" class="text-2xl text-[#00D2ED]"></ion-icon>
                   <div>
                     <small class="text-gray-400 uppercase tracking-widest">Fechas</small>
                     <p id="resFechas">-</p>
@@ -290,7 +290,7 @@
                 </div>
 
                 <div class="flex items-start gap-3">
-                  <ion-icon name="time-outline" class="text-2xl text-[#CC8710]"></ion-icon>
+                  <ion-icon name="time-outline" class="text-2xl text-[#00D2ED]"></ion-icon>
                   <div>
                     <small class="text-gray-400 uppercase tracking-widest">Días y horarios</small>
                     <p id="resHorarios">-</p>
@@ -299,7 +299,7 @@
               </div>
 
               <label class="flex items-center gap-2 text-sm text-gray-300 cursor-pointer mb-5">
-                <input type="checkbox" id="confirmCheck" class="accent-[#CC8710]">
+                <input type="checkbox" id="confirmCheck" class="accent-[#00D2ED]">
                 Confirmo que la información ingresada es correcta
               </label>
 
@@ -311,11 +311,11 @@
             <!-- Botones -->
             <div class="flex gap-3">
               <button type="button" id="btnAtras"
-                      class="hidden w-full text-gray-300 uppercase text-sm tracking-widest border border-white/40 px-6 py-3 cursor-pointer transition-all duration-300 hover:border-[#CC8710] hover:text-[#CC8710] active:scale-95">
+                      class="hidden w-full text-gray-300 uppercase text-sm tracking-widest border border-white/40 px-6 py-3 cursor-pointer transition-all duration-300 hover:border-[#00D2ED] hover:text-[#00D2ED] active:scale-95">
                 Atrás
               </button>
               <button type="button" id="btnSiguiente"
-                      class="w-full text-white uppercase text-sm tracking-widest border border-[#CC8710] px-6 py-3 cursor-pointer transition-all duration-300 hover:bg-[#CC8710] active:scale-95">
+                      class="w-full text-white uppercase text-sm tracking-widest border border-[#00D2ED] px-6 py-3 cursor-pointer transition-all duration-300 hover:bg-[#00D2ED] active:scale-95">
                 Siguiente
               </button>
             </div>
@@ -328,77 +328,63 @@
     </div>
 
     <footer class="w-full bg-[#1B1B1B] py-12">
-      <div class="container mx-auto px-6 xl:max-w-[1100px] 2xl:max-w-[1350px]">
+  <div class="container mx-auto px-6 xl:max-w-[1100px] 2xl:max-w-[1350px]">
 
-        <!-- Logo y descripción -->
-        <div class="flex flex-col items-center">
+    <!-- Logo y descripción -->
+<div class="flex flex-col items-center">
 
-          <!-- línea - logo - línea -->
-          <div class="flex items-center w-full gap-4">
-            <hr class="hr-neon h-[2px] border-0 flex-1">
-            <img src="../../src/assets/SPL Sports League Logo.png" alt="Logo" class="w-60 md:w-80">
-            <hr class="hr-neon h-[2px] border-0 flex-1">
-          </div>
+  <!-- línea - logo - línea -->
+  <div class="flex items-center w-full gap-4">
+    <hr class="hr-neon h-[2px] border-0 flex-1" data-color="#00D2ED">
+    <img src="../../src/assets/SPL Sports League Logo.png" alt="Logo" class="w-60 md:w-80">
+    <hr class="hr-neon h-[2px] border-0 flex-1" data-color="#00D2ED">
+  </div>
 
-          <p class="text-center text-white w-[100%] md:w-[50%]">
-            Tu espacio para <span class="text-[#CB8610] font-bold">competir, organizar y crecer</span>.
-            Conectamos deportistas, organizadores y
-            comunidades a través de una plataforma
-            diseñada para <span class="text-[#CB8610] font-bold">simplificar</span>
-            la gestión de torneos y <span class="text-[#CB8610] font-bold">fomentar</span> la competencia.
-          </p>
-        </div>
+  <p class="text-center text-white w-[100%] md:w-[50%]">
+    Tu espacio para <span class="text-[#00D2ED] font-bold">competir, organizar y crecer</span>.
+    Conectamos deportistas, organizadores y
+    comunidades a través de una plataforma
+    diseñada para <span class="text-[#00D2ED] font-bold">simplificar</span>
+    la gestión de torneos y <span class="text-[#00D2ED] font-bold">fomentar</span> la competencia.
+  </p>
+</div>
 
-        <!-- Columnas de links -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12 md:text-center">
+    <!-- Columnas de links -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8 mt-12 md:text-center">
 
-          <div>
-            <h2 class="text-[18px] font-bold text-white">Navegación</h2>
-            <ul>
-              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Inicio</a></li>
-              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Crea</a></li>
-              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Descubre</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h2 class="text-[18px] font-bold text-white">Ayuda y Soporte</h2>
-            <ul>
-              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Preguntas frecuentes</a></li>
-              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Centro de ayuda</a></li>
-              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Contacto</a></li>
-              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Reportar un problema</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h2 class="text-[18px] font-bold text-white">Planes</h2>
-            <ul>
-              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Plan gratuito</a></li>
-              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Plan Pro</a></li>
-              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Plan Premium</a></li>
-              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Comprar membresías</a></li>
-              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Gestionar membresía</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h2 class="text-[18px] font-bold text-white">Información legal</h2>
-            <ul>
-              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Términos y condiciones</a></li>
-              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Política de privacidad</a></li>
-              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Política de cookies</a></li>
-              <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Política de cancelación</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="flex flex-col justify-center items-center mt-20">
-          <h2 class="text-[#656565] text-[12px] my-2">© 2026 SPL. Todos los derechos reservados.</h2>
-          <h2 class="text-[#656565] text-[12px]">Hecho para quienes viven la competencia.</h2>
-        </div>
-
+      <div>
+        <h2 class="text-[18px] font-bold text-white">Navegación</h2>
+        <ul>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="index.html">Inicio</a></li>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="creaciontorneo.html">Crea</a></li>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="torneosactivos.html">Descubre</a></li>
+        </ul>
       </div>
-    </footer>
+
+      <div>
+        <h2 class="text-[18px] font-bold text-white">Ayuda y Soporte</h2>
+        <ul>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="soporte.html">Preguntas frecuentes</a></li>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Reportar un problema</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-[18px] font-bold text-white">Información legal</h2>
+        <ul>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Términos y condiciones</a></li>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Política de privacidad</a></li>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Política de cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex flex-col justify-center items-center mt-20">
+      <h2 class="text-[#656565] text-[12px] my-2">© 2026 SPL. Todos los derechos reservados.</h2>
+      <h2 class="text-[#656565] text-[12px]">Hecho para quienes viven la competencia.</h2>
+    </div>
+
+  </div>
+</footer>
 
     <script src="../../src/js/main.js" defer></script>
   </body>

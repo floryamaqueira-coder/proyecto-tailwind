@@ -30,7 +30,7 @@
         <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="creaciontorneo.html">Crea</a></li>
         <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="iniciosesion.html">Únete</a></li>
         <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="torneosactivos.html">Descubre</a></li>
-        <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="">Soporte</a></li>
+        <li class="px-3 py-1 hover:scale-120 hover:drop-shadow-[0_0_2px_black] transition duration-200"><a href="soporte.html">Soporte</a></li>
       </ul>
     </nav>
 
@@ -54,48 +54,48 @@
       <a href="creaciontorneo.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Crea</a>
       <a href="iniciosesion.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Únete</a>
       <a href="torneosactivos.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Descubre</a>
-      <a href="#" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Soporte</a>
+      <a href="soporte.html" class="text-xl transition-all duration-300 hover:text-orange-400 hover:translate-x-2 active:scale-95">Soporte</a>
     </aside>
   </header>
     <!-- Márgenes -->
     <div class="container mx-auto px-4 xl:max-w-[1100px] 2xl:max-w-[1350px]">
 
-      <main class="mt-10 mb-10">
+      <main class="mt-25 mb-10">
 
   <header class="text-center mb-8">
-    <h1 class="text-[#CC8710] font-bold uppercase text-2xl sm:text-3xl lg:text-[35px] tracking-[2px] sm:tracking-[4px] lg:tracking-[6px]"
+    <h1 class="text-[#9725BA] font-bold uppercase text-2xl sm:text-3xl lg:text-[35px] tracking-[2px] sm:tracking-[4px] lg:tracking-[6px]"
         style="font-family: 'Oswald', sans-serif;">Torneos activos</h1>
     <p class="text-gray-300 font-light mt-2">Encuentra torneos según tus deportes de interés</p>
-    <hr class="hr-neon h-[2px] w-full mt-5 border-0">
+    <hr class="hr-neon h-[2px] w-full mt-5 border-0" data-color="#9725BA">
   </header>
 
-  <!-- ================= FILTROS ================= -->
-  <section class="borde-neon rounded-3xl p-5 border border-[#CC8710] text-white mb-8">
+  <!-- FILTROS -->
+  <section class="borde-neon rounded-3xl p-5 border border-[#9725BA] text-white mb-8" data-color="#9725BA">
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-6">
 
       <div class="relative">
         <label for="select-criterio" class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Buscar en</label>
         <select id="select-criterio"
-                class="w-full appearance-none bg-[#1B1B1B] border-b border-white/40 text-white py-2 pr-8 cursor-pointer focus:outline-none focus:border-[#CC8710] transition duration-300">
+                class="w-full appearance-none bg-[#1B1B1B] border-b border-white/40 text-white py-2 pr-8 cursor-pointer focus:outline-none focus:border-[#9725BA] transition duration-300">
           <option value="todo">Todo</option>
           <option value="deporte">Deporte</option>
           <option value="nombre">Nombre</option>
         </select>
-        <ion-icon name="chevron-down-outline" class="absolute right-1 bottom-2 text-xl text-[#CC8710] pointer-events-none"></ion-icon>
+        <ion-icon name="chevron-down-outline" class="absolute right-1 bottom-2 text-xl text-[#9725BA] pointer-events-none"></ion-icon>
       </div>
 
       <div class="relative">
         <label for="input-busqueda" class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Búsqueda</label>
         <input type="text" id="input-busqueda" placeholder="Ej: Handball, Rugby o un nombre"
-               class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 placeholder-gray-500 focus:outline-none focus:border-[#CC8710] transition duration-300">
-        <ion-icon name="search-outline" class="absolute right-1 bottom-2 text-xl text-[#CC8710] pointer-events-none"></ion-icon>
+               class="w-full bg-transparent border-b border-white/40 text-white py-2 pr-8 placeholder-gray-500 focus:outline-none focus:border-[#9725BA] transition duration-300">
+        <ion-icon name="search-outline" class="absolute right-1 bottom-2 text-xl text-[#9725BA] pointer-events-none"></ion-icon>
       </div>
 
       <div class="relative">
         <label for="select-deporte" class="block text-sm uppercase tracking-widest text-gray-300 mb-2">Deporte</label>
         <select id="select-deporte"
-                class="w-full appearance-none bg-[#1B1B1B] border-b border-white/40 text-white py-2 pr-8 cursor-pointer focus:outline-none focus:border-[#CC8710] transition duration-300">
+                class="w-full appearance-none bg-[#1B1B1B] border-b border-white/40 text-white py-2 pr-8 cursor-pointer focus:outline-none focus:border-[#9725BA] transition duration-300">
           <option value="todos">Todos los deportes</option>
           <option value="futbol">Fútbol</option>
           <option value="futbol-sala">Fútbol sala</option>
@@ -103,7 +103,7 @@
           <option value="padel">Pádel</option>
           <option value="otro">Otro deporte...</option>
         </select>
-        <ion-icon name="chevron-down-outline" class="absolute right-1 bottom-2 text-xl text-[#CC8710] pointer-events-none"></ion-icon>
+        <ion-icon name="chevron-down-outline" class="absolute right-1 bottom-2 text-xl text-[#9725BA] pointer-events-none"></ion-icon>
       </div>
 
     </div>
@@ -131,7 +131,7 @@
 
   </section>
 
-  <!-- ================= RESULTADOS (las tarjetas las genera el JS) ================= -->
+  <!-- = RESULTADOS (las tarjetas las genera el JS) -->
   <section id="grilla-torneos" class="grid grid-cols-1 md:grid-cols-2 gap-5"></section>
 
   <div id="sin-resultados-torneos" class="hidden text-center text-gray-300 border border-white/20 rounded-3xl p-8">
@@ -142,12 +142,64 @@
 
     </div>
 
-    <footer class="w-full bg-[#1B1B1B] py-8">
-      <div class="container mx-auto px-6 xl:max-w-[1100px] 2xl:max-w-[1350px]">
-        <hr class="hr-neon h-[2px] w-full mb-6 border-0">
-        <p class="text-center text-[#656565] text-[12px]">© 2026 SPL | Sistema de Gestión de Torneos y Partidos</p>
+    <footer class="w-full bg-[#1B1B1B] py-12">
+  <div class="container mx-auto px-6 xl:max-w-[1100px] 2xl:max-w-[1350px]">
+
+    <!-- Logo y descripción -->
+<div class="flex flex-col items-center">
+
+  <!-- línea - logo - línea -->
+  <div class="flex items-center w-full gap-4">
+    <hr class="hr-neon h-[2px] border-0 flex-1" data-color="#9725BA">
+    <img src="../../src/assets/SPL Sports League Logo.png" alt="Logo" class="w-60 md:w-80">
+    <hr class="hr-neon h-[2px] border-0 flex-1" data-color="#9725BA">
+  </div>
+
+  <p class="text-center text-white w-[100%] md:w-[50%]">
+    Tu espacio para <span class="text-[#9725BA] font-bold">competir, organizar y crecer</span>.
+    Conectamos deportistas, organizadores y
+    comunidades a través de una plataforma
+    diseñada para <span class="text-[#9725BA] font-bold">simplificar</span>
+    la gestión de torneos y <span class="text-[#9725BA] font-bold">fomentar</span> la competencia.
+  </p>
+</div>
+
+    <!-- Columnas de links -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8 mt-12 md:text-center">
+
+      <div>
+        <h2 class="text-[18px] font-bold text-white">Navegación</h2>
+        <ul>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="index.html">Inicio</a></li>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="creaciontorneo.html">Crea</a></li>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="torneosactivos.html">Descubre</a></li>
+        </ul>
       </div>
-    </footer>
+
+      <div>
+        <h2 class="text-[18px] font-bold text-white">Ayuda y Soporte</h2>
+        <ul>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Preguntas frecuentes</a></li>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="soporte.html">Reportar un problema</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-[18px] font-bold text-white">Información legal</h2>
+        <ul>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Términos y condiciones</a></li>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Política de privacidad</a></li>
+          <li class="my-2 text-[#99A1AF] font-light text-[14px] transition-all duration-300 hover:text-orange-400"><a href="#">Política de cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex flex-col justify-center items-center mt-20">
+      <h2 class="text-[#656565] text-[12px] my-2">© 2026 SPL. Todos los derechos reservados.</h2>
+      <h2 class="text-[#656565] text-[12px]">Hecho para quienes viven la competencia.</h2>
+    </div>
+
+  </div>
+</footer>
 
     <script src="../../src/js/main.js" defer></script>
   </body>
